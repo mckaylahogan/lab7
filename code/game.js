@@ -317,20 +317,14 @@ Player.prototype.act = function(step, level, keys) {
 };
 
 Level.prototype.playerTouched = function(type, actor) {
-  if (type == "coin") {
+  if (type == "coin", "enemy") {
     this.actors = this.actors.filter(function(other) {
       return other != actor;
     });
   }
 };
 
-Level.prototype.playerTouched = function(type, actor) {
-	if (type == 'enemy') {
-		this.actors = this.actors.filter(function(other) {
-			return other != actor;
-		});
-	}
-};
+
 
 // Arrow key codes for readibility
 var arrowCodes = {37: "left", 38: "up", 39: "right"};
